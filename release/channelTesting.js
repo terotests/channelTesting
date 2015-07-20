@@ -285,6 +285,17 @@
   };
   channelTesting.prototype = new channelTesting_prototype();
 
+  (function () {
+    if (typeof define !== 'undefined' && define !== null && define.amd != null) {
+      __amdDefs__['channelTesting'] = channelTesting;
+      this.channelTesting = channelTesting;
+    } else if (typeof module !== 'undefined' && module !== null && module.exports != null) {
+      module.exports['channelTesting'] = channelTesting;
+    } else {
+      this.channelTesting = channelTesting;
+    }
+  }).call(new Function('return this')());
+
   if (typeof define !== 'undefined' && define !== null && define.amd != null) {
     define(__amdDefs__);
   }
