@@ -183,7 +183,7 @@
           var auth = authFuzz(root);
           var fsRoot = filesystem.getRootFolder();
 
-          var server = _serverSocket('localhost', 1234);
+          var server = _serverSocket('http://localhost', 1234);
           var manager = _serverChannelMgr(server, filesystem.getRootFolder(), auth);
 
           readyPromise.resolve({
